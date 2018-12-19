@@ -1,0 +1,31 @@
+###Questions
+
+>1.Why is the `fs` core module important for Node development?
+
+A:`fs` is how Node uses the file service
+
+>2.What is the difference between sync and non-sync methods in the fs module?
+
+A: Whether the code runs in sequential order, or sync. Or the methods dont wait for the next line to run, or non-sync.
+    
+>3.Why are modules used?
+
+A: Its way to decompose code into small pieces.
+
+>4.Why are libraries such as fs used in Node programming?
+
+A: Reusable code to make life easier.
+
+###Code practice
+
+```
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.writeFile('hello-world.txt', 'Hello to this great world', 'utf8', (err) => {
+  if (err) throw err;
+
+  console.log('success')
+});
+}).listen(8080);
+```
